@@ -6,16 +6,16 @@ export default function NavBar() {
       <nav>
         <div className="flex justify-between">
           <div>
-            <Link href="/" className="rounded-full bg-red-700 p-2 mx-2">
+            <Link href="/" className="btn-primary">
               Reel Rater
             </Link>
           </div>
 
           <div>
-            <Link href="/login" className="rounded-full bg-red-700 p-2 mx-2">
+            <Link href="/login" className="btn-primary">
               Login
             </Link>
-            <Link href="/register" className="rounded-full bg-red-700 p-2 mx-2">
+            <Link href="/register" className="btn-primary">
               Register
             </Link>
           </div>

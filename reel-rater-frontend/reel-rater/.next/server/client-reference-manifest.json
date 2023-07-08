@@ -147,14 +147,6 @@
       ],
       "async": false
     },
-    "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
-      "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
     "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\globals.css": {
       "id": "(app-client)/./src/app/globals.css",
       "name": "*",

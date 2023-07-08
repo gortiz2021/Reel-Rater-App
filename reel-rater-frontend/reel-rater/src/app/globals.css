@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+      @apply dark:bg-stone-900 text-white font-mono;
+  
+    }
+  }
+
+@layer components {
+    .btn-primary {
+        @apply rounded-full bg-red-700 p-2 mx-2;
+    }
+}
