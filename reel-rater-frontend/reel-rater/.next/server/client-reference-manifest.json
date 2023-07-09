@@ -154,12 +154,22 @@
         "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
+    },
+    "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\node_modules\\@fortawesome\\fontawesome-svg-core\\styles.css": {
+      "id": "(app-client)/./node_modules/@fortawesome/fontawesome-svg-core/styles.css",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
     }
   },
   "entryCSSFiles": {
     "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\layout": [
       "static/css/app/layout.css"
     ],
-    "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\page": []
+    "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\page": [
+      "static/css/app/page.css"
+    ]
   }
 }
