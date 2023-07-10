@@ -3,8 +3,9 @@ type Movie = {
   imdbId: string;
   title: string;
   releaseDate: string;
-  poster: null;
-  generes: number;
-  backdrops: null;
-  reviewIds: null;
+  trailerLink:string;
+  poster: string;
+  genres: string[];
+  backdrops: string[];
+  reviewIds: string[];
 };

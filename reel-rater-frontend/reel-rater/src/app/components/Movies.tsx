@@ -6,36 +6,31 @@ import {
   faCircleArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import Trailer from "./Trailer";
 
-export default async function Movies() {
-  const moviesData: Movie[] = await getAllMovies();
-  const movies = await moviesData;
+type Props = {
+  movies: Movie[]
+}
+
+export default async function Movies({ movies }: Props) {
+  // const moviesData: Movie[] = await getAllMovies();
+  // const movies = await moviesData;
 
   const content = (
     <main className="flex items-center">
+
       <div className="">
-        <button
-          className="text-red-700 text-3xl"
-          // onClick={handlePreviousMovie}
-        >
-          <FontAwesomeIcon icon={faCircleArrowLeft} />
-        </button>
+        {movies.map((movie) => (
+          <h1 key={movie.imdbId} className="flex justify-between py-4 w-[75vw]">
+            {movie.title}
+            <div className="">
+              <Trailer movie={movie}></Trailer>
+            </div>
+            
+          </h1>
+          ))}
       </div>
 
-      <div>
-        {movies.map((movie) => (
-          <h1 key={movie.imdbId}>{movie.title}</h1>
-        ))}
-      </div>
-      
-      <div className="">
-        <button
-          className="text-red-700 text-3xl"
-          // onClick={handleNextMovie}
-        >
-          <FontAwesomeIcon icon={faCircleArrowRight} />
-        </button>
-      </div>
     </main>
   );
 
