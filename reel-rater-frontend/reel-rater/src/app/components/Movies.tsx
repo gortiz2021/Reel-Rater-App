@@ -9,28 +9,26 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import Trailer from "./Trailer";
 
 type Props = {
-  movies: Movie[]
-}
+  movies: Movie[];
+};
 
 export default async function Movies({ movies }: Props) {
   // const moviesData: Movie[] = await getAllMovies();
   // const movies = await moviesData;
 
   const content = (
-    <main className="flex items-center">
-
-      <div className="">
+    <main>
+      <div className="w-[75vw]">
         {movies.map((movie) => (
-          <h1 key={movie.imdbId} className="flex justify-between py-4 w-[75vw]">
-            {movie.title}
-            <div className="">
+          <div key={movie.imdbId} className="flex flex-row items-center py-4 ">
+            <h1 className="mr-4">{movie.title}</h1>
+            <div className="flex flex-row flex-nowrap items-center ml-auto">
+              <Link href={`/review/${movie.id}`} className="mr-8">Review</Link>
               <Trailer movie={movie}></Trailer>
             </div>
-            
-          </h1>
-          ))}
+          </div>
+        ))}
       </div>
-
     </main>
   );
 
