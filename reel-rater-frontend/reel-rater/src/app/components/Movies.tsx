@@ -1,11 +1,11 @@
 import Link from "next/link";
-import getAllMovies from "../lib/getAllMovies";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleArrowLeft,
-  faCircleArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
-import "@fortawesome/fontawesome-svg-core/styles.css";
+// import getAllMovies from "../lib/getAllMovies";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faCircleArrowLeft,
+//   faCircleArrowRight,
+// } from "@fortawesome/free-solid-svg-icons";
+// import "@fortawesome/fontawesome-svg-core/styles.css";
 import Trailer from "./Trailer";
 
 type Props = {
@@ -23,7 +23,7 @@ export default async function Movies({ movies }: Props) {
           <div key={movie.imdbId} className="flex flex-row items-center py-4 ">
             <h1 className="mr-4">{movie.title}</h1>
             <div className="flex flex-row flex-nowrap items-center ml-auto">
-              <Link href={`/review/${movie.id}`} className="mr-8">Review</Link>
+              <Link href={`/review/${movie.id}`} className="btn-primary mr-8">Review</Link>
               <Trailer movie={movie}></Trailer>
             </div>
           </div>

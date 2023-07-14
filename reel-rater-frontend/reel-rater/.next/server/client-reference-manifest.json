@@ -47,6 +47,14 @@
         "chunks": [],
         "async": false
       }
+    },
+    "(app-client)/./src/app/review/[id]/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/review/[id]/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
     }
   },
   "edgeSSRModuleMapping": {},
@@ -135,7 +143,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/review/[id]/page:static/chunks/app/review/[id]/page.js"
+        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
@@ -143,7 +151,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/review/[id]/page:static/chunks/app/review/[id]/page.js"
+        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
@@ -155,11 +163,11 @@
       ],
       "async": false
     },
-    "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\node_modules\\@fortawesome\\fontawesome-svg-core\\styles.css": {
-      "id": "(app-client)/./node_modules/@fortawesome/fontawesome-svg-core/styles.css",
+    "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\review\\[id]\\page.tsx": {
+      "id": "(app-client)/./src/app/review/[id]/page.tsx",
       "name": "*",
       "chunks": [
-        "app/page:static/chunks/app/page.js"
+        "app/review/[id]/page:static/chunks/app/review/[id]/page.js"
       ],
       "async": false
     }
@@ -167,9 +175,6 @@
   "entryCSSFiles": {
     "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\layout": [
       "static/css/app/layout.css"
-    ],
-    "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\page": [
-      "static/css/app/page.css"
     ],
     "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\review\\[id]\\page": []
   }
