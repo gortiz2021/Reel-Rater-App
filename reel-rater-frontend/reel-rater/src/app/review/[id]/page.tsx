@@ -2,42 +2,49 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import getMovieById from "@/app/lib/getMovieById";
 
 export default function Review(id: number) {
   const params = useParams();
+  const [review, setReview] = useState('');
   // console.log(params);
 
-  function reviewSubmit() {
-    console.log(review);
+  const reviewSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log("Review: ", review)
+    setReview('')
   }
-
-  const [review, setReview] = useState('');
 
   return (
     <div>
-      <Link className="btn-primary" href="/">
+      {/* <Link className="btn-primary" href="/">
         Back to home
-      </Link>
+      </Link> */}
 
       <form
-        action={getMovieById(id)}
         className="flex flex-col items-center"
         onSubmit={reviewSubmit}
       >
+        <label className="my-4">Review</label>
         <textarea
+          required
+          rows={10}
+          cols={70}
           placeholder="Enter Review"
           value={review}
           onChange={(e) => setReview(e.target.value)}
           className="text-black"
         ></textarea>
-        <button type="submit" className="btn-primary mt-6">
+        <button 
+          type="submit" 
+          className="btn-primary mt-6"
+        >
           Send Review
         </button>
-      </form>
 
-      <div></div>
+        <p>{review}</p>
+      </form>
     </div>
   );
 }

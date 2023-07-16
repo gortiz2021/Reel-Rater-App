@@ -3,6 +3,7 @@ package movie.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 @Entity
@@ -28,8 +29,6 @@ public class Movie implements Serializable {
     private String genres;
     @Column(name = "backdrops")
     private String backdrops;
-    @Column(name = "review_ids")
-    private String reviewIds;
 
     public Movie() {
         this.imdbId = null;
@@ -39,10 +38,9 @@ public class Movie implements Serializable {
         this.poster = null;
         this.genres = null;
         this.backdrops = null;
-        this.reviewIds = null;
     }
 
-    public Movie(String imdbId, String title, Date releaseDate, String trailerLink, String poster, String backdrops, String genres, String reviewIds){
+    public Movie(String imdbId, String title, Date releaseDate, String trailerLink, String poster, String backdrops, String genres){
         this.imdbId = imdbId;
         this.title = title;
         this.releaseDate = releaseDate;
@@ -50,7 +48,6 @@ public class Movie implements Serializable {
         this.poster = poster;
         this.backdrops = backdrops;
         this.genres = genres;
-        this.reviewIds = reviewIds;
     }
 
     public int getId() {
@@ -115,14 +112,6 @@ public class Movie implements Serializable {
 
     public void setBackdrops(String backdrops) {
         this.backdrops = backdrops;
-    }
-
-    public String getReviewIds() {
-        return reviewIds;
-    }
-
-    public void setReviewIds(String reviewIds) {
-        this.reviewIds = reviewIds;
     }
 
 }

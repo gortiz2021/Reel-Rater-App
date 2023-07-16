@@ -502,6 +502,10 @@ video {
 .m-auto {
   margin: auto;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .ml-auto {
   margin-left: auto;
 }

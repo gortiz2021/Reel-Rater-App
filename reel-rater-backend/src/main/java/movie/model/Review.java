@@ -13,24 +13,29 @@ public class Review implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
     private Long id;
-    @Column
+
+    @ManyToOne
+    @JoinColumn(name = "movie_id")
+    private Movie movie;
+    @Column(name = "body")
     private String body;
-    @Column
+    @Column(name = "created")
     private LocalDateTime created;
-    @Column
+    @Column(name = "updated")
     private LocalDateTime updated;
 
     public Review() {
         this.id = null;
+        this.movie = null;
         this.body = null;
         this.created = null;
         this.updated = null;
     }
 
-    public Review(Long id, String body, LocalDateTime created, LocalDateTime updated){
+    public Review(Long id, Movie movie, String body, LocalDateTime created, LocalDateTime updated){
         this.id = id;
+        this.movie = movie;
         this.body = body;
         this.created = created;
         this.updated = updated;
@@ -42,6 +47,14 @@ public class Review implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 
     public String getBody() {
@@ -71,7 +84,8 @@ public class Review implements Serializable {
     @Override
     public String toString() {
         return "Review{" +
-                "id=" + id +
+                "review_id=" + id +
+                ", movie_id=" + movie +
                 ", body='" + body + '\'' +
                 ", created=" + created +
                 ", updated=" + updated +

@@ -173,6 +173,7 @@
     }
   },
   "entryCSSFiles": {
+    "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\page": [],
     "C:\\repo\\ReelRater\\reel-rater-frontend\\reel-rater\\src\\app\\layout": [
       "static/css/app/layout.css"
     ],
