@@ -9,3 +9,11 @@ type Movie = {
   backdrops: string[];
   reviewIds: string[];
 };
+
+type Review = {
+  id: number;
+  movie: Movie,
+  body: string,
+  created: Date,
+  updated: Date
+}

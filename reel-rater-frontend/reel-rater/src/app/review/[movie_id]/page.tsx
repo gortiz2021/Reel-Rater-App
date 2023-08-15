@@ -1,45 +1,79 @@
-import Link from "next/link";
+'use client'
 import { useParams } from "next/navigation";
-import { FormEvent, useState } from "react";
-import getReviewsByMovieId from "@/app/lib/getReviewsByMovieId";
-import ReviewByMovie from "@/app/components/ReviewByMovie";
+import { ChangeEvent, FormEvent, useState } from "react";
 
-export default async function Review(movie_id) {
+const initState = {
+  body: ""
+}
 
-  const reviewByMovieData = await getReviewsByMovieId(movie_id);
-  const reviews = await reviewByMovieData;
+export default function Review() {
 
-  // const params = useParams();
-  // const [review, setReview] = useState('');
-  // console.log(params);
+  const params = useParams();
+  const [review, setReview] = useState(initState);
 
-  // const reviewSubmit = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault()
-  //   console.log("Review: ", review)
-  //   setReview('')
-  // }
+  const currMovieId = params.movie_id;
+  console.log(currMovieId);
+
+  const reviewSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const formData = new FormData(e.currentTarget as HTMLFormElement);
+    const data = {
+      body: formData.get('body'), // Assuming your textarea has the name "review"
+    };
+    console.log(data)
+
+    // const jsonData = JSON.stringify(data)
+    const endpoint = `http://localhost:8080/api/v1/ReelRater/reviews/${currMovieId}`
+
+    const options = {
+      // The method is POST because we are sending data.
+      method: 'POST',
+      // Tell the server we're sending JSON.
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // Body of the request is the JSON data we created above.
+      body: JSON.stringify(data),
+    }
+    const response = await fetch(endpoint, options)
+    const result = await response.json()
+    console.log(result)
+    setReview(initState)
+
+   }
+
+  const reviewChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+
+    const body = e.target.name
+
+    setReview(prevReview => ({
+        ...prevReview,
+        [body]: e.target.value
+    }))
+    // setReview(prevReview => (e.target.value))
+}
 
   return (
     <div>
-      {/* <Link className="btn-primary" href="/">
-        Back to home
-      </Link> */}
-
-      <ReviewByMovie movie_id={reviews}/>
 
       <form
         className="flex flex-col items-center"
-        // onSubmit={reviewSubmit}
+        onSubmit={reviewSubmit}
       >
-        <label className="my-4">Review</label>
+        <label className="my-4" htmlFor="body">Review</label>
         <textarea
           required
           rows={10}
           cols={70}
-          placeholder="Enter Review"
-          value={review}
+          placeholder="Enter your Review"
+          value={review.body}
+          // value={review}
+          onChange={reviewChange}
           // onChange={(e) => setReview(e.target.value)}
           className="text-black"
+          id="body"
+          name="body"
         ></textarea>
         <button 
           type="submit" 
@@ -48,8 +82,10 @@ export default async function Review(movie_id) {
           Send Review
         </button>
 
+        <p>{review.body}</p>
         {/* <p>{review}</p> */}
       </form>
+      
     </div>
   );
 }

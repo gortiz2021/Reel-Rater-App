@@ -7,20 +7,20 @@ import movie.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@Controller
+@CrossOrigin
+@RestController
 @RequestMapping("/api/v1/ReelRater")
 public class ReviewController {
 
     @Autowired
     private ReviewService service;
 
-    @PostMapping("/reviews/{movie_id}")
+    @PostMapping("/reviews/{movie}")
     public ResponseEntity<Review> createReview(@PathVariable Movie movie, @RequestBody ReviewRequest request) {
         // Get the review body from the request object
         String body = request.getBody();

@@ -1,4 +1,3 @@
 {
-  "/page": "app/page.js",
   "/review/[movie_id]/page": "app/review/[movie_id]/page.js"
 }

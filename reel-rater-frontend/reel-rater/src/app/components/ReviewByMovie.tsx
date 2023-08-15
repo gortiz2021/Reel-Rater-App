@@ -1,21 +1,16 @@
 import getReviewsByMovieId from "../lib/getReviewsByMovieId";
 
-export default async function ReviewByMovie(movie_id){
+export default async function ReviewByMovie(m_id: number) {
+  const content = (
+    <main>
+      <div>
+        {/* <div key={m_id.movie.imdbId}>
+          <h1>{m_id.movie.title}</h1>
+          <p>{m_id.body}</p>
+        </div> */}
+      </div>
+    </main>
+  );
 
-    
-
-    const content = (
-        <main>
-            <div>
-                {movie_id.map((m) => (
-                    <div key={m.movie.imdbId}>
-                    <h1>{m.movie.title}</h1>
-                    <p>{m.body}</p>
-                  </div>
-                ))}
-            </div>
-        </main>
-    );
-
-    return content;
+  return content;
 }
